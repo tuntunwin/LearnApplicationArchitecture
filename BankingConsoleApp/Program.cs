@@ -7,22 +7,36 @@ Console.WriteLine("----------------------");
 
 Console.WriteLine("What do you want to? Key in 1 to Deposite, 2 to Withdraw, 3 to Transfer:");
 var choice = int.Parse(Console.ReadLine());
-if (choice == 3) {
-    Console.WriteLine("From Account No?:");
-    var fromAccNo = Console.ReadLine();
-
-    Console.WriteLine("To Account No?:");
-    var toAccNo = Console.ReadLine();
+if (choice == 1)
+{
+    Console.WriteLine("Account No?:");
+    var accNo = Console.ReadLine();
 
     Console.WriteLine("Amount ?:");
     var amount = decimal.Parse(Console.ReadLine());
 
-    var fromAcc = new Account(fromAccNo, 100000);
-    var toAcc = new Account(toAccNo, 100000);
-    AccountTransferService.Transfer(fromAcc, toAcc, amount);
+    var acc = new Account(accNo, 100000);
+    acc.Deposite(amount);
 
-    Console.WriteLine($"After Transfer => Acc No:{fromAcc.AccNo}, Balance:{fromAcc.Balance}");
-    Console.WriteLine($"After Transfer => Acc No:{toAcc.AccNo}, Balance:{toAcc.Balance}");
+    Console.WriteLine($"After Deposite => Acc No:{acc.AccNo}, Balance:{acc.Balance}");
+
+}
+else if (choice == 3) {
+Console.WriteLine("From Account No?:");
+var fromAccNo = Console.ReadLine();
+
+Console.WriteLine("To Account No?:");
+var toAccNo = Console.ReadLine();
+
+Console.WriteLine("Amount ?:");
+var amount = decimal.Parse(Console.ReadLine());
+
+var fromAcc = new Account(fromAccNo, 100000);
+var toAcc = new Account(toAccNo, 100000);
+AccountTransferService.Transfer(fromAcc, toAcc, amount);
+
+Console.WriteLine($"After Transfer => Acc No:{fromAcc.AccNo}, Balance:{fromAcc.Balance}");
+Console.WriteLine($"After Transfer => Acc No:{toAcc.AccNo}, Balance:{toAcc.Balance}");
 
 }
 
