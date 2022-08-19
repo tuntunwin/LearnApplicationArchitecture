@@ -7,7 +7,8 @@ Console.WriteLine("----------------------");
 
 Console.WriteLine("What do you want to? Key in 1 to Deposite, 2 to Withdraw, 3 to Transfer:");
 var choice = int.Parse(Console.ReadLine());
-if (choice == 1)
+if (choice == 0) { }
+    if (choice == 1)
 {
     Console.WriteLine("Account No?:");
     var accNo = Console.ReadLine();
