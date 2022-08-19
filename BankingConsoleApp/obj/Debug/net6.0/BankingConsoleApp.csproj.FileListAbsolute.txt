@@ -1,0 +1,15 @@
+D:\trainings\app-architecture\BankingConsoleApp\BankingConsoleApp\bin\Debug\net6.0\BankingConsoleApp.exe
+D:\trainings\app-architecture\BankingConsoleApp\BankingConsoleApp\bin\Debug\net6.0\BankingConsoleApp.deps.json
+D:\trainings\app-architecture\BankingConsoleApp\BankingConsoleApp\bin\Debug\net6.0\BankingConsoleApp.runtimeconfig.json
+D:\trainings\app-architecture\BankingConsoleApp\BankingConsoleApp\bin\Debug\net6.0\BankingConsoleApp.dll
+D:\trainings\app-architecture\BankingConsoleApp\BankingConsoleApp\bin\Debug\net6.0\BankingConsoleApp.pdb
+D:\trainings\app-architecture\BankingConsoleApp\BankingConsoleApp\obj\Debug\net6.0\BankingConsoleApp.csproj.AssemblyReference.cache
+D:\trainings\app-architecture\BankingConsoleApp\BankingConsoleApp\obj\Debug\net6.0\BankingConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\trainings\app-architecture\BankingConsoleApp\BankingConsoleApp\obj\Debug\net6.0\BankingConsoleApp.AssemblyInfoInputs.cache
+D:\trainings\app-architecture\BankingConsoleApp\BankingConsoleApp\obj\Debug\net6.0\BankingConsoleApp.AssemblyInfo.cs
+D:\trainings\app-architecture\BankingConsoleApp\BankingConsoleApp\obj\Debug\net6.0\BankingConsoleApp.csproj.CoreCompileInputs.cache
+D:\trainings\app-architecture\BankingConsoleApp\BankingConsoleApp\obj\Debug\net6.0\BankingConsoleApp.dll
+D:\trainings\app-architecture\BankingConsoleApp\BankingConsoleApp\obj\Debug\net6.0\refint\BankingConsoleApp.dll
+D:\trainings\app-architecture\BankingConsoleApp\BankingConsoleApp\obj\Debug\net6.0\BankingConsoleApp.pdb
+D:\trainings\app-architecture\BankingConsoleApp\BankingConsoleApp\obj\Debug\net6.0\BankingConsoleApp.genruntimeconfig.cache
+D:\trainings\app-architecture\BankingConsoleApp\BankingConsoleApp\obj\Debug\net6.0\ref\BankingConsoleApp.dll
