@@ -21,6 +21,20 @@ if (choice == 1)
     Console.WriteLine($"After Deposite => Acc No:{acc.AccNo}, Balance:{acc.Balance}");
 
 }
+if (choice == 2)
+{
+    Console.WriteLine("Account No?:");
+    var accNo = Console.ReadLine();
+
+    Console.WriteLine("Amount ?:");
+    var amount = decimal.Parse(Console.ReadLine());
+
+    var acc = new Account(accNo, 100000);
+    acc.Withdraw(amount);
+
+    Console.WriteLine($"After Withdraw => Acc No:{acc.AccNo}, Balance:{acc.Balance}");
+
+}
 else if (choice == 3) {
 Console.WriteLine("From Account No?:");
 var fromAccNo = Console.ReadLine();
