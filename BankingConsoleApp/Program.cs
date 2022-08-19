@@ -35,23 +35,27 @@ if (choice == 2)
     Console.WriteLine($"After Withdraw => Acc No:{acc.AccNo}, Balance:{acc.Balance}");
 
 }
-else if (choice == 3) {
-Console.WriteLine("From Account No?:");
-var fromAccNo = Console.ReadLine();
+else if (choice == 3)
+{
+    Console.WriteLine("From Account No?:");
+    var fromAccNo = Console.ReadLine();
 
-Console.WriteLine("To Account No?:");
-var toAccNo = Console.ReadLine();
+    Console.WriteLine("To Account No?:");
+    var toAccNo = Console.ReadLine();
 
-Console.WriteLine("Amount ?:");
-var amount = decimal.Parse(Console.ReadLine());
+    Console.WriteLine("Amount ?:");
+    var amount = decimal.Parse(Console.ReadLine());
 
-var fromAcc = new Account(fromAccNo, 100000);
-var toAcc = new Account(toAccNo, 100000);
-AccountTransferService.Transfer(fromAcc, toAcc, amount);
+    var fromAcc = new Account(fromAccNo, 100000);
+    var toAcc = new Account(toAccNo, 100000);
+    AccountTransferService.Transfer(fromAcc, toAcc, amount);
 
-Console.WriteLine($"After Transfer => Acc No:{fromAcc.AccNo}, Balance:{fromAcc.Balance}");
-Console.WriteLine($"After Transfer => Acc No:{toAcc.AccNo}, Balance:{toAcc.Balance}");
+    Console.WriteLine($"After Transfer => Acc No:{fromAcc.AccNo}, Balance:{fromAcc.Balance}");
+    Console.WriteLine($"After Transfer => Acc No:{toAcc.AccNo}, Balance:{toAcc.Balance}");
 
+}
+else {
+    Console.WriteLine("Invalid choice!");
 }
 
 //var accA = new Account("Account-A", 100000);
