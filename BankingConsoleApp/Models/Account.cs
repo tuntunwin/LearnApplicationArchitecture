@@ -30,6 +30,10 @@ namespace BankingConsoleApp.Models
         public void Withdraw(decimal amount) { 
             this.Balance -= amount;
         }
+
+        override public string ToString() {
+            return $"Account {this.AccNo} with Balance {this.Balance}";
+        }
       
     }
 }
