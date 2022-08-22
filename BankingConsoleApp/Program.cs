@@ -1,12 +1,34 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using BankingConsoleApp;
 using BankingConsoleApp.Models;
+using System.Collections.Generic;
 
+var Accounts = new List<Account>();
+
+for (int i = 0; i < 10; i++)
+{
+    var acc = new Account($"AA-{i}", 100000);
+    Accounts.Add(acc);
+}
+
+Account SearchAccountByAccNo(string accNo) {
+    foreach (var acc in Accounts) {
+        if (acc.AccNo == accNo)
+            return acc;
+    }
+    return null;
+}
+
+void ShowAccountInfo(Account acc)
+{
+    //Console.WriteLine($"Acc {acc.AccNo} with Balance:{acc.Balance}");
+    Console.WriteLine(acc);
+}
 Console.WriteLine("Welcome To CLI Banking Application");
 Console.WriteLine("----------------------");
 while (true)
 {
-    Console.WriteLine("What do you want to? Key in 1 to Deposite, 2 to Withdraw, 3 to Transfer, 0 to Exit:");
+    Console.WriteLine("What do you want to? Key in 1 to Deposite, 2 to Withdraw, 3 to Transfer, 4 to Open Account, 5 to List Accounts, 0 to Exit:");
     var choice = int.Parse(Console.ReadLine());
     if (choice == 1)
     {
@@ -16,10 +38,16 @@ while (true)
         Console.WriteLine("Amount ?:");
         var amount = decimal.Parse(Console.ReadLine());
 
-        var acc = new Account(accNo, 100000);
+        //var acc = new Account(accNo, 100000);
+        var acc = SearchAccountByAccNo(accNo);
+        if (acc == null) {
+            Console.WriteLine($"Invalid acc no. {accNo}");
+            continue;
+        }
         acc.Deposite(amount);
-
-        Console.WriteLine($"After Deposite => Acc No:{acc.AccNo}, Balance:{acc.Balance}");
+       
+        Console.Write($"After Deposite=>");
+        ShowAccountInfo(acc);
 
     }
     if (choice == 2)
@@ -30,10 +58,16 @@ while (true)
         Console.WriteLine("Amount ?:");
         var amount = decimal.Parse(Console.ReadLine());
 
-        var acc = new Account(accNo, 100000);
+        var acc = SearchAccountByAccNo(accNo);
+        if (acc == null)
+        {
+            Console.WriteLine($"Invalid acc no. {accNo}");
+            continue;
+        }
         acc.Withdraw(amount);
 
-        Console.WriteLine($"After Withdraw => Acc No:{acc.AccNo}, Balance:{acc.Balance}");
+        Console.Write($"After Withdraw=>{acc}");
+        //ShowAccountInfo(acc);
 
     }
     else if (choice == 3)
@@ -55,11 +89,36 @@ while (true)
         Console.WriteLine($"After Transfer => Acc No:{toAcc.AccNo}, Balance:{toAcc.Balance}");
 
     }
-    else if (choice == 0) {
+    else if (choice == 4)
+    {
+        Console.WriteLine("Account No?:");
+        var accNo = Console.ReadLine();
+
+        Console.WriteLine("Deposite ?:");
+        var depositeAmt = decimal.Parse(Console.ReadLine());
+
+        var newAcc = new Account(accNo, depositeAmt);
+        Accounts.Add(newAcc);
+
+    }
+    else if (choice == 5) {
+        var no = 1;
+        foreach (var acc in Accounts) {
+            //Console.WriteLine($"Acc No:{acc.AccNo}, Balance:{acc.Balance}");
+            Console.WriteLine($"{no++}:{acc}");
+        }
+        //for (int i = 0; i < Accounts.Count; i++) { 
+        //    var acc = Accounts[i];
+        //    Console.WriteLine($"Acc No:{acc.AccNo}, Balance:{acc.Balance}");
+        //}
+    }
+    else if (choice == 0)
+    {
         Console.Write("Thank you for using our banking app. See you later. Bye");
         return;
     }
-     else if (choice == -1) {
+    else if (choice == -1)
+    {
         return;
     }
     else
