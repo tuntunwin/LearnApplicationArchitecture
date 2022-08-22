@@ -56,7 +56,7 @@ while (true)
 
     }
     else if (choice == 0) {
-        Console.Write("Thank you for using our banking app. Please come again. Bye");
+        Console.Write("Thank you for using our banking app. See you later. Bye");
         return;
     }
      else if (choice == -1) {
