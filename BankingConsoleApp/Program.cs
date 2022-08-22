@@ -58,6 +58,9 @@ while (true)
     else if (choice == 0) {
         return;
     }
+     else if (choice == -1) {
+        return;
+    }
     else
     {
         Console.WriteLine("Invalid choice!");
