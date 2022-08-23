@@ -21,9 +21,9 @@ Account SearchAccountByAccNo(string accNo) {
 
 void ShowAccountInfo(Account acc)
 {
-    //Console.WriteLine($"Acc {acc.AccNo} with Balance:{acc.Balance}");
     Console.WriteLine(acc);
 }
+
 Console.WriteLine("Welcome To CLI Banking Application");
 Console.WriteLine("----------------------");
 while (true)
@@ -38,7 +38,6 @@ while (true)
         Console.WriteLine("Amount ?:");
         var amount = decimal.Parse(Console.ReadLine());
 
-        //var acc = new Account(accNo, 100000);
         var acc = SearchAccountByAccNo(accNo);
         if (acc == null) {
             Console.WriteLine($"Invalid acc no. {accNo}");
@@ -66,9 +65,7 @@ while (true)
         }
         acc.Withdraw(amount);
 
-        Console.Write($"After Withdraw=>{acc}");
-        //ShowAccountInfo(acc);
-
+        Console.Write($"After Withdraw =>{acc}");
     }
     else if (choice == 3)
     {
