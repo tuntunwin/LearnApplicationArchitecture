@@ -19,11 +19,6 @@ Account SearchAccountByAccNo(string accNo) {
     return null;
 }
 
-void ShowAccountInfo(Account acc)
-{
-    Console.WriteLine(acc);
-}
-
 Console.WriteLine("Welcome To CLI Banking Application");
 Console.WriteLine("----------------------");
 while (true)
@@ -45,9 +40,7 @@ while (true)
         }
         acc.Deposite(amount);
        
-        Console.Write($"After Deposite => {acc}");
-        //ShowAccountInfo(acc);
-
+        Console.WriteLine($"After Deposite => {acc}");
     }
     if (choice == 2)
     {
@@ -65,7 +58,7 @@ while (true)
         }
         acc.Withdraw(amount);
 
-        Console.Write($"After Withdraw => {acc}");
+        Console.WriteLine($"After Withdraw => {acc}");
     }
     else if (choice == 3)
     {
@@ -78,12 +71,12 @@ while (true)
         Console.WriteLine("Amount ?:");
         var amount = decimal.Parse(Console.ReadLine());
 
-        var fromAcc = new Account(fromAccNo, 100000);
-        var toAcc = new Account(toAccNo, 100000);
+        var fromAcc = SearchAccountByAccNo(fromAccNo);
+        var toAcc = SearchAccountByAccNo(toAccNo);
         AccountTransferService.Transfer(fromAcc, toAcc, amount);
 
-        Console.Write($"After Transfer => {fromAcc}");
-        Console.Write($"After Transfer => {toAccNo}");
+        Console.WriteLine($"After Transfer at From Account => {fromAcc}");
+        Console.WriteLine($"After Transfer at To Account => {toAcc}");
     }
     else if (choice == 4)
     {
@@ -110,11 +103,7 @@ while (true)
     }
     else if (choice == 0)
     {
-        Console.Write("Thank you for using our banking app. See you later. Bye");
-        return;
-    }
-    else if (choice == -1)
-    {
+        Console.WriteLine("Thank you for using our banking app. See you later. Bye");
         return;
     }
     else
