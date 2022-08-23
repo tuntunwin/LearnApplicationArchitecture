@@ -45,8 +45,8 @@ while (true)
         }
         acc.Deposite(amount);
        
-        Console.Write($"After Deposite=>");
-        ShowAccountInfo(acc);
+        Console.Write($"After Deposite => {acc}");
+        //ShowAccountInfo(acc);
 
     }
     if (choice == 2)
@@ -65,7 +65,7 @@ while (true)
         }
         acc.Withdraw(amount);
 
-        Console.Write($"After Withdraw =>{acc}");
+        Console.Write($"After Withdraw => {acc}");
     }
     else if (choice == 3)
     {
@@ -82,9 +82,8 @@ while (true)
         var toAcc = new Account(toAccNo, 100000);
         AccountTransferService.Transfer(fromAcc, toAcc, amount);
 
-        Console.WriteLine($"After Transfer => Acc No:{fromAcc.AccNo}, Balance:{fromAcc.Balance}");
-        Console.WriteLine($"After Transfer => Acc No:{toAcc.AccNo}, Balance:{toAcc.Balance}");
-
+        Console.Write($"After Transfer => {fromAcc}");
+        Console.Write($"After Transfer => {toAccNo}");
     }
     else if (choice == 4)
     {
