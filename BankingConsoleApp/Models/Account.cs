@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankingConsoleApp.Models
 {
-    public class Account
+    public class Account : object
     {
         const decimal MIN_BALANCE = 1000;
         public readonly string AccNo ;

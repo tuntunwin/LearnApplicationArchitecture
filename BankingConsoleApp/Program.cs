@@ -5,19 +5,41 @@ using System.Collections.Generic;
 
 var Accounts = new List<Account>();
 
+//var qry = from word in "The quick brown fox jumps over the lazy dog".Split()
+//where word.Length > 3
+//orderby word.Length
+//select word;
+
+//foreach (var w in qry) {
+//    w.Dump();
+//}
+
+//int a = 3;
+//a.Dump();
+//500.Dump();
+//"Hello".Dump();
+//return;
+//Int32 aa = 3;
+//Int64 bb = 4;
+//a.ToString();
+//3.ToString();
+//"hello".ToString();
+//true.ToString();
+//object oo = new Object();
+//int myint = 3;
+//Int32 myint = 3;
+//Console.WriteLine(MyExtensions.Increase(myint));
+//Console.WriteLine(myint.Decrease().Decrease().Increase());
+//DateTime now = DateTime.Now;
+//Console.WriteLine($"Now is {now.Date} After:{now.After(2)} Befor:{now.Before(2)}");
+//return;
+
 for (int i = 0; i < 10; i++)
 {
     var acc = new Account($"AA-{i}", 100000);
     Accounts.Add(acc);
 }
 
-Account SearchAccountByAccNo(string accNo) {
-    foreach (var acc in Accounts) {
-        if (acc.AccNo == accNo)
-            return acc;
-    }
-    return null;
-}
 
 void ShowAccountInfo(Account acc)
 {
@@ -39,7 +61,7 @@ while (true)
         var amount = decimal.Parse(Console.ReadLine());
 
         //var acc = new Account(accNo, 100000);
-        var acc = SearchAccountByAccNo(accNo);
+        var acc = Accounts.SearchByAccNo(accNo);
         if (acc == null) {
             Console.WriteLine($"Invalid acc no. {accNo}");
             continue;
@@ -58,7 +80,7 @@ while (true)
         Console.WriteLine("Amount ?:");
         var amount = decimal.Parse(Console.ReadLine());
 
-        var acc = SearchAccountByAccNo(accNo);
+        var acc = Accounts.SearchByAccNo(accNo);
         if (acc == null)
         {
             Console.WriteLine($"Invalid acc no. {accNo}");
