@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankingConsoleApp.Models
 {
-    public class Account
+    public class Account : object
     {
         const decimal MIN_BALANCE = 1000;
         public readonly string AccNo ;
@@ -29,6 +29,10 @@ namespace BankingConsoleApp.Models
 
         public void Withdraw(decimal amount) { 
             this.Balance -= amount;
+        }
+
+        override public string ToString() {
+            return $"Account {this.AccNo} with Balance {this.Balance}";
         }
       
     }
