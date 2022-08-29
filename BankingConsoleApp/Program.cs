@@ -5,6 +5,36 @@ using System.Collections.Generic;
 
 var Accounts = new List<Account>();
 
+while (true) 
+{
+    Console.WriteLine("What do you want to? Key in 1 to check Even Number, 2 to check Odd Number, 3 to do RoundUp, 0 to Exit:");
+    var inputNum = int.Parse(Console.ReadLine());
+    if (inputNum == 1)
+    {
+        Console.WriteLine("Please enter your number to check Even Number or not...");
+        Int32 inputValue = int.Parse(Console.ReadLine());
+        Console.WriteLine($"your input values is {inputValue} and it's {inputValue.IsEven()}.");
+    }
+    else if (inputNum == 2)
+    {
+        Console.WriteLine("Please enter your number to check Odd Number or not...");
+        Int32 inputValue = int.Parse(Console.ReadLine());
+        Console.WriteLine($"your input values is {inputValue} and it's {inputValue.IsOdd()}.");
+    }
+    else if (inputNum == 3)
+    {
+        Console.WriteLine("Please enter your decimal number to convert round up value...");
+        decimal inputValue = decimal.Parse(Console.ReadLine());
+        Console.WriteLine($"your input values is {inputValue} and after round up - {inputValue.RoundUp()}.");
+    }
+    else if (inputNum == 0)
+    {
+        Console.WriteLine("Thank you for your effort!");
+        return;
+    }
+}
+
+
 for (int i = 0; i < 10; i++)
 {
     var acc = new Account($"AA-{i}", 100000);
