@@ -24,5 +24,10 @@ namespace BankingConsoleApp
         {
            return Math.Round(dec);
         }
+
+        public static int WordCount(this string str) 
+        {
+            return str.Length;
+        }
     }
 }

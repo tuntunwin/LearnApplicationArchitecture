@@ -7,7 +7,8 @@ var Accounts = new List<Account>();
 
 while (true) 
 {
-    Console.WriteLine("What do you want to? Key in 1 to check Even Number, 2 to check Odd Number, 3 to do RoundUp, 0 to Exit:");
+    Console.WriteLine("What do you want to? Key in 1 for Even Number checking, 2 for Odd Number checking, 3 to do RoundUp," +
+        " 4 for Word Count, 0 to Exit:");
     var inputNum = int.Parse(Console.ReadLine());
     if (inputNum == 1)
     {
@@ -26,6 +27,12 @@ while (true)
         Console.WriteLine("Please enter your decimal number to convert round up value...");
         decimal inputValue = decimal.Parse(Console.ReadLine());
         Console.WriteLine($"your input values is {inputValue} and after round up - {inputValue.RoundUp()}.");
+    }
+    else if (inputNum == 4)
+    {
+        Console.WriteLine("Please enter a word...");
+        string inputValue = Console.ReadLine();
+        Console.WriteLine($"your input string is '{inputValue}' and total length is {inputValue.WordCount()}.");
     }
     else if (inputNum == 0)
     {
