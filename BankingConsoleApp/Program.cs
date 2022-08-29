@@ -92,14 +92,10 @@ while (true)
     }
     else if (choice == 5) {
         var no = 1;
-        foreach (var acc in Accounts) {
-            //Console.WriteLine($"Acc No:{acc.AccNo}, Balance:{acc.Balance}");
+        foreach (var acc in Accounts)
+        {
             Console.WriteLine($"{no++}:{acc}");
         }
-        //for (int i = 0; i < Accounts.Count; i++) { 
-        //    var acc = Accounts[i];
-        //    Console.WriteLine($"Acc No:{acc.AccNo}, Balance:{acc.Balance}");
-        //}
     }
     else if (choice == 0)
     {
@@ -111,10 +107,3 @@ while (true)
         Console.WriteLine("Invalid choice!");
     }
 }
-
-//var accA = new Account("Account-A", 100000);
-//var accB = new Account("Account-B", 100000);
-//AccountTransferService.Transfer(accA, accB, 50000);
-
-//Console.WriteLine($"After Transfer => Acc No:{accA.AccNo}, Balance:{accA.Balance}");
-//Console.WriteLine($"After Transfer => Acc No:{accB.AccNo}, Balance:{accB.Balance}");
