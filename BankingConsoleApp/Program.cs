@@ -5,38 +5,52 @@ using System.Collections.Generic;
 
 var Accounts = new List<Account>();
 
-while (true) 
+while (true)
 {
     Console.WriteLine("What do you want to? Key in 1 for Even Number checking, 2 for Odd Number checking, 3 to do RoundUp," +
-        " 4 for Word Count, 0 to Exit:");
+        " 4 for Word Count, 5 to check Empty, 6 to check Contains, 0 to Exit:");
     var inputNum = int.Parse(Console.ReadLine());
     if (inputNum == 1)
     {
         Console.WriteLine("Please enter your number to check Even Number or not...");
         Int32 inputValue = int.Parse(Console.ReadLine());
-        Console.WriteLine($"your input values is {inputValue} and it's {inputValue.IsEven()}.");
+        Console.WriteLine($"Your input values is {inputValue} and it's {inputValue.IsEven()}.");
     }
     else if (inputNum == 2)
     {
         Console.WriteLine("Please enter your number to check Odd Number or not...");
         Int32 inputValue = int.Parse(Console.ReadLine());
-        Console.WriteLine($"your input values is {inputValue} and it's {inputValue.IsOdd()}.");
+        Console.WriteLine($"Your input values is {inputValue} and it's {inputValue.IsOdd()}.");
     }
     else if (inputNum == 3)
     {
         Console.WriteLine("Please enter your decimal number to convert round up value...");
         decimal inputValue = decimal.Parse(Console.ReadLine());
-        Console.WriteLine($"your input values is {inputValue} and after round up - {inputValue.RoundUp()}.");
+        Console.WriteLine($"Your input values is {inputValue} and after round up - {inputValue.RoundUp()}.");
     }
     else if (inputNum == 4)
     {
         Console.WriteLine("Please enter a word...");
         string inputValue = Console.ReadLine();
-        Console.WriteLine($"your input string is '{inputValue}' and total length is {inputValue.WordCount()}.");
+        Console.WriteLine($"Your input string is '{inputValue}' and total length is {inputValue.WordCount()}.");
+    }
+    else if (inputNum == 5)
+    {
+        Console.WriteLine("Please enter blank...");
+        string inputValue = Console.ReadLine();
+        Console.WriteLine($"Empty : {inputValue.IsEmpty()}.");
+    }
+    else if (inputNum == 6)
+    {
+        Console.WriteLine("Please enter a sentence...");
+        string enterValue = Console.ReadLine();
+        Console.WriteLine("Please enter a search word...");
+        string searchValue = Console.ReadLine();
+        Console.WriteLine($"Your sentence '{enterValue}', search for '{searchValue}' and found : '{enterValue.Contains(searchValue)}'");
     }
     else if (inputNum == 0)
     {
-        Console.WriteLine("Thank you for your effort!");
+        Console.WriteLine("Thank you for your effort! See u again...");
         return;
     }
 }

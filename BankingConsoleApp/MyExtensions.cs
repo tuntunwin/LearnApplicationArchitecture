@@ -22,12 +22,21 @@ namespace BankingConsoleApp
 
         public static decimal RoundUp(this decimal dec)
         {
-           return Math.Round(dec);
+            return Math.Round(dec);
         }
 
-        public static int WordCount(this string str) 
+        public static int WordCount(this string str)
         {
             return str.Length;
+        }
+        public static Boolean IsEmpty(this string str)
+        {
+            return string.IsNullOrWhiteSpace(str);
+        }
+
+        public static Boolean Contains(this string str, string searchVal)
+        {
+            return str.Contains(searchVal);
         }
     }
 }
