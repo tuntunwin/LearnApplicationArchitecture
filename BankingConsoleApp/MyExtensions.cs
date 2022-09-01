@@ -29,5 +29,13 @@ namespace BankingConsoleApp
         {
             return str.Length;
         }
+        public static Boolean IsEmpty(this string str)
+        {
+            return string.IsNullOrWhiteSpace(str);
+        }
+        public static Boolean Contains(this string str, string searchVal)
+        {
+            return str.Contains(searchVal);
+        }
     }
 }

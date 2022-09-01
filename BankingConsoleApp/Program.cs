@@ -40,6 +40,14 @@ while (true)
         string inputValue = Console.ReadLine();
         Console.WriteLine($"Empty : {inputValue.IsEmpty()}.");
     }
+    else if (inputNum == 6)
+    {
+        Console.WriteLine("Please enter a sentence...");
+        string enterValue = Console.ReadLine();
+        Console.WriteLine("Please enter a search word...");
+        string searchValue = Console.ReadLine();
+        Console.WriteLine($"Your sentence '{enterValue}', search for '{searchValue}' and found : '{enterValue.Contains(searchValue)}'");
+    }
     else if (inputNum == 0)
     {
         Console.WriteLine("Thank you for your effort! See u again...");
