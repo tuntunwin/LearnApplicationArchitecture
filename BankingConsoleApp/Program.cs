@@ -33,10 +33,21 @@ var Accounts = new List<Account>();
 //DateTime now = DateTime.Now;
 //Console.WriteLine($"Now is {now.Date} After:{now.After(2)} Befor:{now.Before(2)}");
 //return;
+//static void SendEmail(decimal balance) {
+//    Console.WriteLine("Email. Your balnace was updated to " + balance);
+//}
 
+//static void SendSMS(decimal balance)
+//{
+//    Console.WriteLine("SMS Your balnace was updated to " + balance);
+//}
 for (int i = 0; i < 10; i++)
 {
     var acc = new Account($"AA-{i}", 100000);
+    //acc.BalanceChanged = (OnBalanceChanged)Delegate.Combine(new OnBalanceChanged(SendEmail), new OnBalanceChanged(SendSMS)) ;
+    acc.BalanceChanged += new Action<decimal>(balance => Console.WriteLine("Email. Your balnace was updated to " + balance));
+    acc.BalanceChanged += new Action<decimal>(balance => Console.WriteLine("SMS. Your balnace was updated to " + balance));
+
     Accounts.Add(acc);
 }
 
