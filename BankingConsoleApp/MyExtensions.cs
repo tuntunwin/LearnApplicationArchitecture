@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace BankingConsoleApp
 {
@@ -48,5 +49,46 @@ namespace BankingConsoleApp
         public static void Dump(this object obj) { 
             Console.WriteLine(obj.ToString());
         }
+
+        public static bool IsEven(this int num)
+        {
+            if(num % 2 == 0) 
+            { 
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool IsOdd(this int num)
+        {
+            if (num % 2 != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static decimal Round(this double num)
+        {
+            return Convert.ToDecimal(Math.Round(num));
+        }
+
+        public static int WordCount(string text)
+        {
+            int space_count=1;
+            foreach (char av in text)
+            {
+                if (av.ToString() == " ")
+                {
+                    space_count = space_count + 1;
+                }               
+            }
+            return space_count;
+        }
+
     }
 }

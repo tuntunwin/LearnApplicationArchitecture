@@ -2,6 +2,7 @@
 using BankingConsoleApp;
 using BankingConsoleApp.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 var Accounts = new List<Account>();
 
@@ -41,6 +42,22 @@ var Accounts = new List<Account>();
 //{
 //    Console.WriteLine("SMS Your balnace was updated to " + balance);
 //}
+
+int num = 0;
+Console.WriteLine($"{num} is {num.IsEven()}");
+Console.WriteLine($"{num} is " + MyExtensions.IsEven(num));
+
+num = 4;
+Console.WriteLine($"{num} is {num.IsOdd()}");
+Console.WriteLine($"{num} is " + MyExtensions.IsOdd(num));
+
+double num1 = 21.55;
+Console.WriteLine($"{num1} is {num1.Round()}");
+Console.WriteLine($"{num1} is " + MyExtensions.Round(num1));
+
+string text = "Hello Word Test Ha Ha";
+Console.WriteLine($"{text} is " + MyExtensions.WordCount(text));
+
 for (int i = 0; i < 10; i++)
 {
     var acc = new Account($"AA-{i}", 100000);
