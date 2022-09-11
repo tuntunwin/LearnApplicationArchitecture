@@ -18,7 +18,7 @@ namespace ConsoleApp1
             Console.WriteLine(source);
         }
 
-        public static void Dump(this IEnumerable<string> source, string tag)
+        public static void Dump<T>(this IEnumerable<T> source, string tag)
         {
             foreach (var item in source)
             {
@@ -27,19 +27,22 @@ namespace ConsoleApp1
 
         }
 
+
+
         public static IEnumerable<TSource> Where<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
         {
             foreach (var item in source)
             {
                 if (predicate(item))
                 {
-                    Console.WriteLine("My Where");
+                    //Console.WriteLine("My Where");
                     yield return item;
                 }
             }
         }
 
-        public static IEnumerable<TResult> Select<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, TResult> selector) {
+        public static IEnumerable<TResult> Select<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, TResult> selector)
+        {
             foreach (var item in source)
             {
                 Console.WriteLine("My Select");

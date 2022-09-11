@@ -17,12 +17,12 @@ namespace ConsoleApp1 {
         }
         static void Main(string[] args)
         {
-            var printFunction1 = new Print(MyPrint1);
+            //var printFunction1 = new Print(MyPrint1);
 
-            var printFunction2 = new Print(MyPrint2);
-            var combinePrint = (Print)Delegate.Combine(printFunction1, printFunction2);
+            //var printFunction2 = new Print(MyPrint2);
+            //var combinePrint = (Print)Delegate.Combine(printFunction1, printFunction2);
 
-            combinePrint("Hello World");
+            //combinePrint("Hello World");
             //long eightKB = (1024L * 8);
             //long eightMB = (1024L * 1024  * 8);
             //long eightGB = (1024L * 1024 * 1024 * 8);
@@ -51,17 +51,52 @@ namespace ConsoleApp1 {
             //{
             //    "method 1 => {0}".FormatWith(n).Dump();
             //}
+            //var name = "Andrew S. Tanenbaum - Distributed Systems. Principles and Paradigms.pdf";
+            //name.Substring(0, name.LastIndexOf('.')).Dump();
+            //Directory.GetFiles(@"D:\books\xxx\ttt")
+            //    .Where(f => f.EndsWith(".pdf"))
+            //    .Select(f => f.Split('\\')[4])
+            //    .Select(f => f.Substring(0, f.LastIndexOf('.')))
+            //    .Dump("");
 
-            nums
-                .Where(n => n.IsEven())
-                .Select(n => "Kilo bytes of {0} is {1}".FormatWith(n, n.Kilobyte()))
-                .Dump("lambda way:");
+            var files = Directory.GetFiles(@"D:\books");
+            var pdfFiles = MyExtensions.Select(MyExtensions.Where(files, f => f.EndsWith(".pdf")), f=> new
+            {
+                Name = Path.GetFileNameWithoutExtension(f),
+                Extension = Path.GetExtension(f)
+            });
 
-            var qry = from n in nums
-                      where n.IsEven()
-                      select "Kilo bytes of {0} is {1}".FormatWith(n, n.Kilobyte());
+            // pdfFiles = files.Where(f => f.EndsWith(".pdf"));
+            pdfFiles.Dump("");
+            //.Where(f => f.EndsWith(".pdf"))
+            Directory.GetFiles(@"D:\books")
+               .Where(f => f.EndsWith(".pdf"))
+               .Select(f => new
+               {
+                   Name = Path.GetFileNameWithoutExtension(f),
+                   Extension = Path.GetExtension(f)
+               })
+               .Select(x => "File has name=\"{0}\" and extension=\"{1}\"".FormatWith(x.Name, x.Extension))
+               .Dump("");
 
-            qry.Dump("linq query way:");
+            Enumerable.Range(0, 100).OrderDump("");
+            //nums.Dump("");
+            //Console.WriteLine("---------");
+            //nums
+            //    .Where(n => n.IsEven())
+            //    .Dump("");
+            //Console.WriteLine("---------");
+            //nums
+            //    .Where(n => n.IsEven())
+            //    .Select(n => "Kilo bytes of {0} is {1}".FormatWith(n, n.Kilobyte()))
+            //    //.Select(n => n.Kilobyte())
+            //    .Dump("");
+
+            //var qry = from n in nums
+            //          where n.IsEven()
+            //          select "Kilo bytes of {0} is {1}".FormatWith(n, n.Kilobyte());
+
+            //qry.Dump("linq query way:");
 
 
         }

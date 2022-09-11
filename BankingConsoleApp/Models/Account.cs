@@ -28,13 +28,13 @@ namespace BankingConsoleApp.Models
 
         public void Deposite(decimal amount) {
             this.Balance += amount;
-            BalanceChanged(this.Balance);
+            //BalanceChanged(this.Balance);
             //Send email/sms/im/noti/iot/..... to customer amount/balance
         }
 
         public void Withdraw(decimal amount) { 
             this.Balance -= amount;
-            BalanceChanged(this.Balance);
+            //BalanceChanged(this.Balance);
             //Send email to customer amount/balance
         }
 

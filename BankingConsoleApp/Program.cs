@@ -3,53 +3,17 @@ using BankingConsoleApp;
 using BankingConsoleApp.Models;
 using System.Collections.Generic;
 
-var Accounts = new List<Account>();
+var Accounts = Enumerable.Range(1, 10).Select(n => new Account($"{n}", 100000)).ToList();
 
-//var qry = from word in "The quick brown fox jumps over the lazy dog".Split()
-//where word.Length > 3
-//orderby word.Length
-//select word;
-
-//foreach (var w in qry) {
-//    w.Dump();
-//}
-
-//int a = 3;
-//a.Dump();
-//500.Dump();
-//"Hello".Dump();
-//return;
-//Int32 aa = 3;
-//Int64 bb = 4;
-//a.ToString();
-//3.ToString();
-//"hello".ToString();
-//true.ToString();
-//object oo = new Object();
-//int myint = 3;
-//Int32 myint = 3;
-//Console.WriteLine(MyExtensions.Increase(myint));
-//Console.WriteLine(myint.Decrease().Decrease().Increase());
-//DateTime now = DateTime.Now;
-//Console.WriteLine($"Now is {now.Date} After:{now.After(2)} Befor:{now.Before(2)}");
-//return;
-//static void SendEmail(decimal balance) {
-//    Console.WriteLine("Email. Your balnace was updated to " + balance);
-//}
-
-//static void SendSMS(decimal balance)
+//for (int i = 0; i < 10; i++)
 //{
-//    Console.WriteLine("SMS Your balnace was updated to " + balance);
-//}
-for (int i = 0; i < 10; i++)
-{
-    var acc = new Account($"AA-{i}", 100000);
-    //acc.BalanceChanged = (OnBalanceChanged)Delegate.Combine(new OnBalanceChanged(SendEmail), new OnBalanceChanged(SendSMS)) ;
-    acc.BalanceChanged += new Action<decimal>(balance => Console.WriteLine("Email. Your balnace was updated to " + balance));
-    acc.BalanceChanged += new Action<decimal>(balance => Console.WriteLine("SMS. Your balnace was updated to " + balance));
+//    var acc = new Account($"AA-{i}", 100000);
+//    //acc.BalanceChanged = (OnBalanceChanged)Delegate.Combine(new OnBalanceChanged(SendEmail), new OnBalanceChanged(SendSMS)) ;
+//    acc.BalanceChanged += new Action<decimal>(balance => Console.WriteLine("Email. Your balnace was updated to " + balance));
+//    acc.BalanceChanged += new Action<decimal>(balance => Console.WriteLine("SMS. Your balnace was updated to " + balance));
 
-    Accounts.Add(acc);
-}
+//    Accounts.Add(acc);
+//}
 
 
 void ShowAccountInfo(Account acc)
@@ -72,7 +36,7 @@ while (true)
         var amount = decimal.Parse(Console.ReadLine());
 
         //var acc = new Account(accNo, 100000);
-        var acc = Accounts.SearchByAccNo(accNo);
+        var acc = Accounts.Where(a => a.AccNo == accNo).First();
         if (acc == null) {
             Console.WriteLine($"Invalid acc no. {accNo}");
             continue;
@@ -91,7 +55,7 @@ while (true)
         Console.WriteLine("Amount ?:");
         var amount = decimal.Parse(Console.ReadLine());
 
-        var acc = Accounts.SearchByAccNo(accNo);
+        var acc = Accounts.Where(a => a.AccNo == accNo).First();
         if (acc == null)
         {
             Console.WriteLine($"Invalid acc no. {accNo}");
