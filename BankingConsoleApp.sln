@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSupportExample", "NSupport
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSupport", "NSupport\NSupport.csproj", "{642BE56B-9300-4661-A6FD-0367CB54EFDB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankingWebApp", "BankingWebApp\BankingWebApp.csproj", "{6F730F0E-574F-4068-8D93-80F2BF20318D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{642BE56B-9300-4661-A6FD-0367CB54EFDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{642BE56B-9300-4661-A6FD-0367CB54EFDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{642BE56B-9300-4661-A6FD-0367CB54EFDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F730F0E-574F-4068-8D93-80F2BF20318D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F730F0E-574F-4068-8D93-80F2BF20318D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F730F0E-574F-4068-8D93-80F2BF20318D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F730F0E-574F-4068-8D93-80F2BF20318D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
