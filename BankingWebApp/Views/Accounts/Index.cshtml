@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BankingWebApp.Models.Account>
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>View</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                AccNo
+            </th>
+            <th>
+                Balance
+            </th>
+            <th>
+               Customer
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             
+            <td>
+                @item.AccNo
+            </td>
+            <td>@item.Balance </td>
+            <td>@item.CustomerName</td>
+        </tr>
+}
+    </tbody>
+</table>
