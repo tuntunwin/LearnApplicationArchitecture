@@ -3,7 +3,27 @@ using BankingConsoleApp;
 using BankingConsoleApp.Models;
 using System.Collections.Generic;
 
-var Accounts = Enumerable.Range(1, 10).Select(n => new Account($"{n}", 100000)).ToList();
+var Accounts = Enumerable.Range(1, 10).Select(n => { 
+
+    var acc = new Account($"{n}", 100000);
+    acc.BalanceChanged += EmailSender;
+    acc.BalanceChanged += SMSSender;
+    acc.BalanceChanged -= EmailSender;
+    return acc;
+
+}).ToList();
+
+void EmailSender(object? sender, BalanceChangedEventArgs e)
+{
+    var acc = (Account)sender;
+    Console.WriteLine($"Email: Your account {acc.AccNo} balance changed from {e.OldBalance} to: { e.NewBalance}");
+}
+
+void SMSSender(object? sender, BalanceChangedEventArgs e)
+{
+    var acc = (Account)sender;
+    Console.WriteLine($"SMS: Your account {acc.AccNo} balance changed from {e.OldBalance} to: { e.NewBalance}");
+}
 
 //for (int i = 0; i < 10; i++)
 //{
